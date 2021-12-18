@@ -4,11 +4,15 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.WebDriver;
 import starter.n11seller.navigation.signup.SignupAsUser;
 import starter.n11seller.navigation.tasks.NavigateTo;
+import starter.n11seller.navigation.user_interface.n11SellerErrorElements;
+
+import static net.serenitybdd.screenplay.questions.WebElementQuestion.the;
 
 
 public class n11SignupSellerStepsDefinitions {
@@ -30,5 +34,8 @@ public class n11SignupSellerStepsDefinitions {
 
     @Then("user signed in selleroffice successfully")
     public void userSignedInSellerofficeSuccessfully() {
+        actor.should(
+                GivenWhenThen.seeThat(the(n11SellerErrorElements.ERROR_MSG))
+        );
     }
 }
