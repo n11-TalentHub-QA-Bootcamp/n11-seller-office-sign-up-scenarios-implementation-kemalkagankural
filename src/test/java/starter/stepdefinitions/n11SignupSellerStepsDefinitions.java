@@ -12,7 +12,7 @@ import starter.n11seller.navigation.tasks.NavigateTo;
 
 
 public class n11SignupSellerStepsDefinitions {
-    Actor actor = Actor.named("patikabootcampers");
+    Actor actor = Actor.named("kemal");
 
     @Managed
     WebDriver webDriver;
